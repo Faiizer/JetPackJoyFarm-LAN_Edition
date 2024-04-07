@@ -1,0 +1,926 @@
+[gd_scene load_steps=12 format=3 uid="uid://fm6vjw447b5k"]
+
+[ext_resource type="Texture2D" uid="uid://csmepnnrm1ca4" path="res://materials/floor_rock/xisbchvs_2K_Albedo.jpg" id="1_0ukkm"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_y5ayc"]
+[ext_resource type="Texture2D" uid="uid://cb55tyh15t5hl" path="res://materials/floor_rock/xisbchvs_2K_AO.jpg" id="2_31src"]
+[ext_resource type="Texture2D" uid="uid://bjcajgu6cteil" path="res://materials/floor_rock/xisbchvs_2K_Displacement.jpg" id="3_v8nme"]
+[ext_resource type="Texture2D" uid="uid://cl8xmc2oh805a" path="res://materials/floor_rock/xisbchvs_2K_Normal.jpg" id="4_p6fut"]
+[ext_resource type="Texture2D" uid="uid://dr0jsgrp4mplo" path="res://materials/floor_rock/xisbchvs_2K_Roughness.jpg" id="5_6s3dr"]
+[ext_resource type="PackedScene" uid="uid://da1wpuyab7wa3" path="res://scenes/characters/player.tscn" id="6_r5amh"]
+[ext_resource type="AudioStream" uid="uid://bb3nmoj504uya" path="res://assets/sounds/Waiting.wav" id="8_vya13"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pun45"]
+albedo_texture = ExtResource("1_0ukkm")
+roughness_texture = ExtResource("5_6s3dr")
+normal_enabled = true
+normal_texture = ExtResource("4_p6fut")
+ao_enabled = true
+ao_texture = ExtResource("2_31src")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_v8nme")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ptqou"]
+material = SubResource("StandardMaterial3D_pun45")
+size = Vector2(10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ffabn"]
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_y5ayc")
+player_scene = ExtResource("6_r5amh")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="Texture" type="Node3D" parent="Floor"]
+
+[node name="0 0" type="Node3D" parent="Floor/Texture"]
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 1" type="Node3D" parent="Floor/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 2" type="Node3D" parent="Floor/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 3" type="Node3D" parent="Floor/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 4" type="Node3D" parent="Floor/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 5" type="Node3D" parent="Floor/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 6" type="Node3D" parent="Floor/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 7" type="Node3D" parent="Floor/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 8" type="Node3D" parent="Floor/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(90, 0, 0, 0, 1, 0, 0, 0, 90, 0, 0, 0)
+shape = SubResource("BoxShape3D_ffabn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.6831, 0)
+omni_range = 78.956
+omni_attenuation = 0.00170029
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="B_Host" type="Button" parent="HUD"]
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 570.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 100
+text = "HOST"
+
+[node name="B_Join" type="Button" parent="HUD"]
+offset_left = 584.0
+offset_top = 64.0
+offset_right = 1027.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 100
+text = "JOIN"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/characters/player.tscn")
+spawn_path = NodePath("..")
+spawn_limit = 10
+
+[node name="S_Waiting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vya13")
+autoplay = true
+
+[node name="Floor2" type="StaticBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 317.748, 0)
+
+[node name="Texture" type="Node3D" parent="Floor2"]
+
+[node name="0 0" type="Node3D" parent="Floor2/Texture"]
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 1" type="Node3D" parent="Floor2/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 2" type="Node3D" parent="Floor2/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 3" type="Node3D" parent="Floor2/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 4" type="Node3D" parent="Floor2/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 5" type="Node3D" parent="Floor2/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 6" type="Node3D" parent="Floor2/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 7" type="Node3D" parent="Floor2/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="0 8" type="Node3D" parent="Floor2/Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor3" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="Floor9" type="MeshInstance3D" parent="Floor2/Texture/0 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = SubResource("PlaneMesh_ptqou")
+skeleton = NodePath("../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2"]
+transform = Transform3D(90, 0, 0, 0, 1, 0, 0, 0, 90, 0, 0, 0)
+shape = SubResource("BoxShape3D_ffabn")
+
+[connection signal="pressed" from="HUD/B_Host" to="." method="_on_b_host_pressed"]
+[connection signal="pressed" from="HUD/B_Join" to="." method="_on_b_join_pressed"]
